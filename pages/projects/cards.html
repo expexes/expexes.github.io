@@ -1,0 +1,25 @@
+<div id="cards" class="cards">
+    ...
+</div>
+
+<script load>
+
+	let data = JSON.parse(page('/data/projects.json'));
+
+	x('#cards').html('');
+
+	data.forEach(function (card, i, a) {
+		x('#cards').html(
+			x('#cards').html() +
+			'<div class="card">\n' +
+			'  <h5 class="card-header">' + card.title + '</h5>' +
+			'  <p class="card-body">' + card.description + '</p>' +
+			'  <div class="card-footer center text-center">' +
+			'    <p>' +
+			'      <a href="' + card.github + '">GitHub</a>' +
+			'    </p>' +
+			'  </div>\n' +
+			'</div>'
+		)
+	});
+</script>
