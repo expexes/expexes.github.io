@@ -1,7 +1,18 @@
-const main = {
+const player = {
+	selector: 'player',
+	template: () => page('/pages/player/player.html')
+};
+
+const playerPage = {
+	route: '/player',
+	selector: 'player-page',
+	template: () => page('/pages/player/player-page.html')
+};
+
+const home = {
 	route: '/',
-	selector: 'main-page',
-	template: () => page('/pages/main.html')
+	selector: 'home-page',
+	template: () => page('/pages/home.html')
 };
 
 const projects = {
@@ -38,10 +49,10 @@ new Yavir({
 	el: 'app',
 	mode: 'history',
 	components: [
-		main,
+		home,
 		projects,
 		contact,
-		id,
-		route
+		playerPage,
+		player
 	]
 }).run();

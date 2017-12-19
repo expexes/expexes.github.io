@@ -1,0 +1,52 @@
+<title load>Player</title>
+
+<style load>
+    .vertical-center {
+        top: 0;
+        transform: translateY(30%);
+    }
+
+    .play {
+        font-size: large;
+    }
+</style>
+
+<div class="animated fadeIn vertical-center">
+    <section id="player" class="container">
+        <!--<a class="back" onclick="window.history.back()"><i class="fa fa-chevron-left fa-lg"></i></a>-->
+        <button onclick="window.history.back()">Back</button>
+
+        <div class="row">
+            <div class="col">
+                <div class="player">
+                    <a class="prev"><i class="fa fa-caret-left fa-lg"></i></a>
+                    <a onclick="play()" class="play"><i class="fa fa-play-circle fa-lg"></i></a>
+                    <a class="next"><i class="fa fa-caret-right fa-lg"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<script load>
+	var s = new Audio('/data/1.mp3');
+
+//	const sound = new Howl({
+//		src: [
+//			'/data/1.mp3'
+//		],
+//		html5: true,
+//		volume: 0.5,
+//		onload: function () {
+//			log('load')
+//		}
+//	});
+
+	function play() {
+		s.play();
+	}
+	//
+	//	function pause() {
+	//		sound.pause();
+	//	}
+</script>
